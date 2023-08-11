@@ -1,0 +1,365 @@
+@import url('./fonts.css');
+@import url('./reset.css'); 
+
+#wrap {
+    width:100%;
+    #header {
+        z-index:3;
+        position:fixed;
+        top:0; left:0; 
+        width:100%; height:69px; 
+        background:#111; border-bottom:1px solid #1e1e1e;
+    }
+    #main {
+        width: 100%; 
+        margin-top: 69px;
+        #section1 {
+            width: 100%;
+            .slide-container {
+                position: relative;
+                width: 100%x;
+                cursor: grab;
+                .slide-view {
+                    position: relative;
+                    width: 100%;
+                    overflow: hidden; 
+                    user-select: none;  
+                    .slide-wrap {
+                        width: calc(100% * 18);
+                        display: flex;    
+                        position: relative;
+                        margin-left:-100%;
+                        pointer-events: none;
+                        .slide {
+                            width: 100%;
+                            overflow: hidden;
+                            cursor: grab;
+                            img {
+                                width:100%;
+                            }
+                            @media all and (max-width:1280px) {
+                                img {
+                                    transform:scale(1.5);
+                                }
+                            }
+                        }
+                    }
+                }
+                .page-btn-box {
+                    z-index: 2;
+                    position: absolute;
+                    bottom:10%;
+                    left:0;
+                    width:100%;
+                    display: flex;
+                    justify-content: center;
+                    @media all and (max-width: 1600px) {
+                        & {
+                            transform: scale(0.9);}  
+                    }
+                    @media all and (max-width: 1024px) {
+                        & {
+                            transform: scale(0.8);}  
+                    }
+                    @media all and (max-width: 500px) {
+                        & {
+                            transform: scale(0.7);}  
+                    }
+                    a.page-btn {
+                        width: 12px;
+                        height: 12px;
+                        background: rgba(255,255,255, 0.7);
+                        border: 2px solid rgba(255,255,255, 0);
+                        margin:0 10px;
+                        border-radius: 50%;
+                        text-indent: -2000px;
+                        overflow: hidden;
+                        transform: scale(0.7);
+                        transition: all 0.3s ease-in-out;
+                        &.on {
+                            background:rgba(255,255,255,0); 
+                            border:2px solid rgba(255,255,255,1);
+                            transform:scale(1.2);
+                        }
+                    }
+                }
+                .next-btn { 
+                    position:absolute; top:50%; right:12%; z-index:2; 
+                    margin-top:-26px; border:0; background:none; cursor:pointer;
+                    opacity:0; transition: opacity 1s;
+                    img{
+                        width:52px; height:52px;
+                    }
+                    @media all and (max-width: 1600px) {
+                        & {
+                            transform: scale(0.9);}  
+                    }
+                    @media all and (max-width: 1024px) {
+                        & {
+                            transform: scale(0.7);}  
+                    }
+                    @media all and (max-width: 500px) {
+                        & {
+                            transform: scale(0.6);}  
+                    }
+                }
+                .prev-btn {
+                    position:absolute; top:50%; left:12%; z-index:2; 
+                    margin-top:-26px; border:0; background:transparent; cursor:pointer;
+                    opacity:0; transition: opacity 1s;
+                     img {
+                        width:52px; height:52px; transform: rotate(180deg);
+                    }
+                    @media all and (max-width: 1600px) {
+                        & {
+                            transform: scale(0.9);}  
+                    }
+                    @media all and (max-width: 1024px) {
+                        & {
+                            transform: scale(0.7);}  
+                    }
+                    @media all and (max-width: 500px) {
+                        & {
+                            transform: scale(0.6);}  
+                    }
+                }
+                &:hover .next-btn{
+                    opacity:1;
+                }
+                &:hover .prev-btn{
+                    opacity:1;
+                }
+            }
+        }
+        #section2 {
+            width:100%;
+            margin-bottom: 100px;
+            display:flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            .container {
+                width:1050px;
+                margin: 0 426.5px;
+                .title {
+                    position: relative;
+                    margin:70px 0 50px 0;
+                    width:100%;
+                    color:rgb(51,51,51);
+                    @media all and (max-width: 1600px) {
+                        & {
+                            margin:60px 0 45px 0;}  
+                    }
+                    @media all and (max-width: 1024px) {
+                        & {
+                            margin:50px 0 40px 0;}  
+                    }
+                    @media all and (max-width: 500px) {
+                        & {
+                            margin:30px 0 20px 0;}  
+                    }
+                    h2 {
+                        text-align: center;
+                        font-size: 28px;
+                        @media all and (max-width: 1600px) {
+                            & {
+                                font-size: 24px;}  
+                        }
+                        @media all and (max-width: 1024px) {
+                            & {
+                                font-size: 20px;}  
+                        }
+                        @media all and (max-width: 500px) {
+                            & {
+                                font-size: 16px;}  
+                        }
+                    }
+                }
+                // .content {
+                //     //margin:0 0 100px 0;
+                //     position: relative;
+                //     width:100%;
+                //     display:flex;
+                //     flex-flow: column nowrap;
+                //     justify-content: center;
+                //     align-items: center;
+                //     z-index:1;
+                //     .slide-container {
+                //         user-select: none;  //모든요소 선택안함
+                //         width:100%;
+                //         .slide-view {
+                //             width:100%; 
+                //             overflow: hidden;
+                //             // cursor: grab;
+                //             // display: flex;
+                //             // flex-flow: row nowrap;
+                //             // justify-content: space-between;
+                //             // align-items: center;
+                //             .slide-wrap {
+                //                 pointer-events: none;  // 마우스 터치스와이프 사용 가능하게함.
+                //                 width: 100% * 20;
+                //                 display: flex;
+                //                 //flex-flow: row nowrap;
+                //                 justify-content: space-between;
+                //                 left: -249px;
+                //                 position: relative;
+                //                 .slide {
+                //                     width: 249px;
+                //                     height: 320px;
+                //                     transition:all 0.6s ease-in-out;
+                //                     .gap {
+                //                         //margin:auto 7px;
+                //                         .contents {
+                //                             padding:0 1.71428571%;
+                //                             width:100%;
+                //                             display:flex;
+                //                             img {
+                //                                 width:100%;
+                //                                 pointer-events:none; //마우스 터치스와이프 사용 가능하게 함
+                //                             }
+                //                         }
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //         .next-btn { /* 다음화살표버튼 */
+                //             position:absolute; 
+                //             top:130px; 
+                //             left:1015px; 
+                //             z-index:2; 
+                //             border:0; 
+                //             background:none; 
+                //             cursor:pointer;
+                //             img{
+                //                 width:60px; 
+                //                 height:60px;
+                //                 transform:rotate(180deg);
+                //             }
+                //         }
+                //         .prev-btn { /* 이전화살표버튼 */
+                //             position:absolute; 
+                //             top:130px; 
+                //             right:1015px; 
+                //             z-index:2; 
+                //             border:0; 
+                //             background:transparent; 
+                //             cursor:pointer;
+                //             img {
+                //                 width:60px; 
+                //                 height:60px;
+                //             }
+                //         }
+                //     }
+                // }
+                .content {
+                    width:100%;
+                    //padding-top:50px;
+                    position: relative;
+                    z-index:1;
+                    translate:all 0.6s ease-in-out;
+                    .slide-container{
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        user-select: none;
+                        .slide-view { // 한화면의 너비만 보여줌(3개)
+                            width:100%; 
+                            overflow:hidden;
+                            .slide-wrap {
+                                width:100% * 20; 
+                                display:flex;
+                                flex-flow:row nowrap;
+                                position:relative;
+                                left:-249px;
+                                .slide {
+                                    width:100%;
+                                    height:100%;
+                                    transform:translateX(-24px);
+                                    .gap {
+                                        margin:0 5px;
+                                        .contents {
+                                            background:#151515;
+                                            width:100%;
+                                            margin:0 10%;
+                                            display:flex; 
+                                            flex-flow:column nowrap;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            transition:all 0.6s ease-in-out;
+                                            img {
+                                                width:100%;
+                                                pointer-events:none; //마우스 터치스와이프 사용 가능하게 함
+                                            }
+                                        }
+                                        @media all and (max-width:1100px) {
+                                            margin:0 35%;
+                                        }
+                                        @media all and (max-width:650px) {
+                                            margin:0 40%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .next-btn { /* 다음화살표버튼 */
+                            position:absolute; 
+                            top:130px; 
+                            left:1015px; 
+                            z-index:2; 
+                            border:0; 
+                            background:none; 
+                            cursor:pointer;
+                            img{
+                                width:60px; 
+                                height:60px;
+                                transform:rotate(180deg);
+                            }
+                        }
+                        @media all and (max-width:1100px) {
+                            .next-btn {
+                            left:460px;
+                            right:150px;
+                            top:180px;
+                            }
+                        }
+                        @media all and (max-width:650px) {
+                            .next-btn {
+                                left:360px;
+                                right:150px;
+                                top:110px;
+                            }
+                        }
+                        .prev-btn { /* 이전화살표버튼 */
+                            position:absolute; 
+                            top:130px; 
+                            right:1015px; 
+                            z-index:2; 
+                            border:0; 
+                            background:transparent;
+                            cursor:pointer;
+                            img {
+                                width:60px; 
+                                height:60px;
+                            }
+                        }
+                        @media all and (max-width:1100px) {
+                            .prev-btn {
+                                left:150px;
+                                right:460px;
+                                top:180px;
+                            }
+                        }
+                        @media all and (max-width:650px) {
+                            .prev-btn {
+                                left:150px;
+                                right:380px;
+                                top:110px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
